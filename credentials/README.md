@@ -13,11 +13,75 @@
     <br> If a ssh key is used please upload the key to the credentials folder.
 4. Database URL or IP and port used.
     <br><strong> NOTE THIS DOES NOT MEAN YOUR DATABASE NEEDS A PUBLIC FACING PORT.</strong> But knowing the IP and port number will help with SSH tunneling into the database. The default port is more than sufficient for this class.
-    database1.cluzlb16p6h1.us-west-1.rds.amazonaws.com Port: 3306
-5. Database username: admin
-6. Database password: csc-Team6
-7. Database name (basically the name that contains all your tables): database1
+5. Database username
+6. Database password
+7. Database name (basically the name that contains all your tables)
 8. Clear instructions with examples on how to use all the above information.
+
+# SSH Info
+
+    Server URL: ec2-54-193-103-124.us-west-1.compute.amazonaws.com
+    SSH Username: ubuntu
+
+## Instructions for EC2 Deployment
+
+1) Start terminal and run command to connect to ssh (in same folder as pem file)
+
+    ```
+    ssh -i "ReqCheck.pem" ubuntu@ec2-54-193-103-124.us-west-1.compute.amazonaws.com
+    ```
+
+2) Checkout the branch to deploy from and pull
+
+    ```
+    cd csc648-848-06-sw-engineering-fall-2022
+    git checkout master
+    git pull
+    ```
+
+3) Kill any old processes if they exist
+
+    ```
+    killall screen
+    ```
+
+4) Create a new process for the server to run on using screen
+
+    ```
+    screen
+    ```
+
+    (Press Enter)
+
+5) Navigate to the server folder
+
+    ```
+    cd Milestones/M2/VerticalPrototype/server
+    ```
+
+6) Start the server (This takes about a minute, displays "Server listening on port 3000" when finished)
+
+    ```
+    npm run start:production
+    ```
+
+7) Detatch screen
+
+    (Press ctrl-a d)
+
+8) Exit shell
+
+    ```
+    exit
+    ```
+
+# Database Info
+
+    Database URL: database1.cluzlb16p6h1.us-west-1.rds.amazonaws.com
+    Port: 3306
+    Database Username: admin
+    Database Password: csc-Team6
+    Database Name: database1
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
