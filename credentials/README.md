@@ -20,7 +20,7 @@
 
 # SSH Info
 
-    Server URL: ec2-54-193-103-124.us-west-1.compute.amazonaws.com
+    Server URL: ec2-52-53-211-193.us-west-1.compute.amazonaws.com
     SSH Username: ubuntu
 
 ## Instructions for EC2 Deployment
@@ -28,48 +28,16 @@
 1) Start terminal and run command to connect to ssh (in same folder as pem file)
 
     ```
-    ssh -i "ReqCheck.pem" ubuntu@ec2-54-193-103-124.us-west-1.compute.amazonaws.com
+    ssh -i "ReqCheck.pem" ubuntu@ec2-52-53-211-193.us-west-1.compute.amazonaws.com
     ```
 
-2) Checkout the branch to deploy from and pull
+2) Run the deployment script
 
     ```
-    cd csc648-848-06-sw-engineering-fall-2022
-    git checkout master
-    git pull
+    sh deploy.sh 
     ```
 
-3) Kill any old processes if they exist
-
-    ```
-    killall screen
-    ```
-
-4) Create a new process for the server to run on using screen
-
-    ```
-    screen
-    ```
-
-    (Press Enter)
-
-5) Navigate to the server folder
-
-    ```
-    cd Milestones/M2/VerticalPrototype/server
-    ```
-
-6) Start the server (This takes about a minute, displays "Server listening on port 3000" when finished)
-
-    ```
-    npm run start:production
-    ```
-
-7) Detatch screen
-
-    (Press ctrl-a d)
-
-8) Exit shell
+3) Exit shell
 
     ```
     exit
