@@ -49,7 +49,7 @@
     Port: 3306
     Database Username: admin
     Database Password: csc-Team6
-    Database Name: database1
+    Database Name: mydb
 
 # Most important things to Remember
 ## These values need to kept update to date throughout the semester. <br>
